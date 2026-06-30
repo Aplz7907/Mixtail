@@ -1,0 +1,40 @@
+name: mixtail7
+description: "A new Flutter project."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0" # ปรับเพื่อให้รองรับ Dart 3.x ทั่วไป
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # --- เพิ่ม Libraries ที่ต้องใช้ในโปรเจกต์ Mixtail ---
+  http: ^1.2.0 # สำหรับดึง API TheCocktailDB
+  sqflite: ^2.3.2 # สำหรับ LocalDB (เก็บสูตรเอง)
+  path: ^1.9.0 # จัดการ Path ของ Database
+  shared_preferences: ^2.2.2 # สำหรับเก็บสถานะ Login
+  audioplayers: ^6.0.0 # สำหรับเล่นเสียง Shaking
+  image_picker: ^1.2.1
+  google_generative_ai: ^0.4.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # --- จัดการ Assets ---
+  assets:
+    - assets/sounds/
+    - assets/images/
+  # import ทั้งโฟลเดอร์ sounds เพื่อเรียกใช้ได้ทุกไฟล์
+  # --- จัดการ Fonts ---
+  fonts:
+    - family: PixelFont # ชื่อนี้ต้องตรงกับที่ใช้ใน Code (fontFamily: 'PixelFont')
+      fonts:
+        - asset: assets/fonts/PressStart2P.ttf
